@@ -1,8 +1,8 @@
 function MockupBody(){
     return(
-        <div>
+        <main className="">
             Mockup Body
-        </div>
+        </main>
     )
 }
 
