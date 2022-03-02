@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js sert à gérer le routing des pages à afficher
+import {Route, Routes} from "react-router-dom"; //Route est l'élément qui gère les Routes pour le différentes pages à afficher. Switch permet de n'afficher qu'une page à la fois.
+import MockupPage from "./pages/mockupPage";
+import Header from "./components/header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Routes>
+        <Route path="/" element={<MockupPage />} />
+      </Routes>
     </div>
   );
 }
