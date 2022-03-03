@@ -1,4 +1,12 @@
-function MockupBody(){
+import {useState, useEffect} from "react"
+
+function MockupBody(props){
+    const [emails,setEmails]=useState(props.datas)
+    useEffect(()=>{
+        setEmails(props.datas)
+        console.log(emails)
+    },[props.datas])
+
     return(
         <main className="container my-2">
             <table className="tableMail shadow">
@@ -12,21 +20,13 @@ function MockupBody(){
                 </thead>
                 {/* Table body*/}
                 <tbody>
-                    <tr >
-                        <td>Mark</td>
-                        <td>coucou</td>
-                        <td>01/01/01</td>
-                    </tr>
-                    <tr >
-                        <td>Jacob</td>
-                        <td>ceci n'est pas un virus</td>
-                        <td>01/01/01</td>
-                    </tr>
-                    <tr>
-                        <td >Larry the Bird</td>
-                        <td >Ta daronne est hot!</td>
-                        <td>01/01/01</td>
-                    </tr>
+                    {emails?.map((email)=>(
+                        <tr>
+                            <td>{email.sender} </td>
+                            <td>{email.object}</td>
+                            <td>{email.date}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </main>

@@ -1,12 +1,12 @@
 import Header from "../components/header"
 import MockupBody from "../components/mockupBody"
 
-function MockupPage(){
+function MockupPage(props){
     return(
         
         <div>
             <Header />
-            <MockupBody />
+            <MockupBody datas={props.datas} />
         </div>
     )
 }
