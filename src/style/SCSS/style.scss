@@ -30,6 +30,42 @@ i
     margin-right: 2%;
 }
 
+//mail table
+.tableMail{
+    width: 100%;
+    tr{
+        border-bottom: 2px solid $dark;
+        td{
+            padding: 5px;
+            border-left: 1px solid $primary;
+            border-right: 1px solid $primary;
+        }
+    }     
+    //stripping the table   
+    tr:nth-child(even) {
+        background-color: $secondary;
+      }
+    thead{
+        background-color: $primary;
+        color: white;
+        border-left: 1px solid $primary;
+        border-right: 1px solid $primary;
+
+        th{
+            height: 3 em;
+            padding: 5px;
+            border-left: 1px solid $light;
+            border-right: 1px solid $light;
+        }
+    }
+    //hover on table rows
+    tbody tr:hover
+    {
+        border: 3px solid $primary;
+        cursor: pointer;
+
+    }
+}
 
 //accessibilité
 :focus
