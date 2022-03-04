@@ -2,10 +2,24 @@ import {useState, useEffect} from "react"
 
 function MockupBody(props){
     const [emails,setEmails]=useState(props.datas)
+
+    //useEffect refresh the state when when props.datas is updated
     useEffect(()=>{
-        setEmails(props.datas)
-        console.log(emails)
+        sortByDate.then((sortedEmails)=>{setEmails(sortedEmails)})
+        //setEmails(sortedEmails)
+        //console.log(sortedEmails, emails)
     },[props.datas])
+
+    //the emails must be sorted by date before beeing displayed
+    const sortByDate= new Promise((resolve)=>{
+             const datas=props.datas
+            let sortedDatas=datas.sort((a,b)=>{
+                return new Date(b.date) - new Date(a.date)
+            })
+            console.log("sortedDatas",sortedDatas)
+            resolve(sortedDatas)
+        })
+    
 
     return(
         <main className="container my-2">
@@ -21,7 +35,7 @@ function MockupBody(props){
                 {/* Table body*/}
                 <tbody>
                     {emails?.map((email)=>(
-                        <tr>
+                        <tr key={email.key}>
                             <td>{email.sender} </td>
                             <td>{email.object}</td>
                             <td>{email.date}</td>
