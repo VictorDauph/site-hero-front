@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
 
-function MockupBody(props){
+function EmailList(props){
     const [emails,setEmails]=useState(props.datas)
 
     //useEffect refresh the state when when props.datas is updated
@@ -12,7 +12,7 @@ function MockupBody(props){
 
     //the emails must be sorted by date before beeing displayed
     const sortByDate= new Promise((resolve)=>{
-             const datas=props.datas
+             let datas=props.datas
             let sortedDatas=datas.sort((a,b)=>{
                 return new Date(b.date) - new Date(a.date)
             })
@@ -35,7 +35,7 @@ function MockupBody(props){
                 {/* Table body*/}
                 <tbody>
                     {emails?.map((email)=>(
-                        <tr key={email.key}>
+                        <tr className={email.unread?"unread":null} key={email.key}> 
                             <td>{email.sender} </td>
                             <td>{email.object}</td>
                             <td>{email.date}</td>
@@ -47,4 +47,7 @@ function MockupBody(props){
     )
 }
 
-export default MockupBody
+export default EmailList
+
+//{ email.unread ? "className=font-weight-bold":null} key={email.key}
+//{email.unread?"unread":null}
