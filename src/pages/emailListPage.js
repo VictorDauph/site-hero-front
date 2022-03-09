@@ -1,12 +1,12 @@
 import Header from "../components/header"
 import EmailList from "../components/EmailList"
 
-function EmailListPage(props){
+function EmailListPage(){
     return(
         
         <div>
             <Header />
-            <EmailList datas={props.datas} />
+            <EmailList  />
         </div>
     )
 }
