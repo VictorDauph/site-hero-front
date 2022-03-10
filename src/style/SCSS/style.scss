@@ -13,6 +13,9 @@ i
     font-size: 1.4em;
 }
 
+h1,h2,h3,h4,strong{
+    color: $primary;
+}
 .mini
 {
     font-size: 0.6em;
@@ -52,7 +55,7 @@ i
       }
     thead{
         background-color: $primary;
-        color: white;
+        color: $white;
         border-left: 1px solid $primary;
         border-right: 1px solid $primary;
 
@@ -70,6 +73,11 @@ i
         cursor: pointer;
 
     }
+}
+
+//mail body styling, using Id beacause of the bootstrap presets
+#email-body{
+    background-color: $white;    
 }
 
 //accessibilité

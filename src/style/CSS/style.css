@@ -2217,7 +2217,7 @@ progress {
   height: 1.5em;
 }
 .form-control::placeholder {
-  color: #6c757d;
+  color: #000000;
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
@@ -11128,6 +11128,10 @@ i {
   font-size: 1.4em;
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, strong {
+  color: #0d21d8;
+}
+
 .mini {
   font-size: 0.6em;
 }
@@ -11164,7 +11168,7 @@ i {
 }
 .tableMail thead {
   background-color: #0d21d8;
-  color: white;
+  color: #FFFFFF;
   border-left: 1px solid #0d21d8;
   border-right: 1px solid #0d21d8;
 }
@@ -11177,6 +11181,10 @@ i {
 .tableMail tbody tr:hover {
   border: 3px solid #0d21d8;
   cursor: pointer;
+}
+
+#email-body {
+  background-color: #FFFFFF;
 }
 
 :focus {
